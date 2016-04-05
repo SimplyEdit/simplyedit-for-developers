@@ -8,6 +8,11 @@ First make a new HTML file for the hello world plugin, called 'hello-world.html'
 <section id="hello-world" class="simply-dialog simply-modal">
     <h1>Hello World</h1>
 </section>
+<style>
+  #hello-world h1 {
+    font-size: 40px;
+  }
+</style>
 <script>
   function makeButton(action, icon, text) {
     var listItem = document.createElement("li");
