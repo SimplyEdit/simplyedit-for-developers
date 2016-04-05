@@ -19,6 +19,7 @@ First make a new HTML file for the hello world plugin, called 'hello-world.html'
     button.appendChild(icon);
     button.appendChild(document.createTextNode(text));
     listItem.appendChild(button);
+    return listItem;
   }
   
   editor.plugins.helloWorld = {
