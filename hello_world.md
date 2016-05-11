@@ -65,7 +65,7 @@ Immediately after this script tag add the following:
 If you reload the page and start SimplyEdit, you will see your new Hello button in the main toolbar.
 When you press it a dialog opens with 'Hello World'. 
 
-However, you can't close the dialog yet. For that, you need to add a toolbar in the dialog and add a close button to it. So open hellow-world.html and change the dialog html code like this:
+But you can't close the dialog yet. For that, you need to add a toolbar in the dialog and add a close button to it. Open `hello-world.html` and change the dialog html code like this:
 
 ```
 <section id="hello-world" class="simply-dialog simply-modal">
