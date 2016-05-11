@@ -8,24 +8,21 @@ If you take a look at the source of a page that uses SimplyEdit, the source code
 
 This is why SimplyEdit needs a `data-simply-endpoint`. This attribute contains a URL to the JSON data store.
 
-The startup sequence for a SimplyEdit page is then as follows:
+The basic startup sequence for a SimplyEdit page is then as follows:
 
 1. Load the HTML
-2. (optional) Load getters and setters
-3. (optional) Load alternative JSON data store
-4. Load simply-edit.js
-5. Initialize SimplyEdit 
-6. SimplyEdit loads the data from the datastore
-7. SimplyEdit parses the HTML. It looks for elements with `data-simply-\*`
-8. For each `data-simply-field` element, SimplyEdit locates the content in the JSON data and inserts it into that element. It replaces existing content.
-10. For each `data-simply-list` element, it will parse any `<template>` found inside. It will then add elements to the list for each entry in the JSON data that matches its name, using the matching template.
-11. For each `data-simply-data` element, it will grab the data from the named data source instead of the default JSON data store. It will then render the list or field.
-12. (optional) Load plugins.
+2. Load simply-edit.js
+3. Initialize SimplyEdit 
+4. SimplyEdit loads the data from the JSON datastore
+5. SimplyEdit parses the HTML. It looks for elements with `data-simply-\*`
+6. For each `data-simply-field` element, SimplyEdit locates the content in the JSON data and inserts it into that element. It replaces existing content.
+7. For each `data-simply-list` element, it will parse any `<template>` found inside. It will then add elements to the list for each entry in the JSON data that matches its name, using the matching template.
+8. For each `data-simply-data` element, it will grab the data from the named data source instead of the default JSON data store. It will then render the list or field.
 
 When you enter the edit mode, by adding `#simply-edit` to the URL, the followin happens:
 
-1. Call `connect()` on the JSON data store. If necessary this will open a login dialog. When connect() returns true, continue.
-2. Locate all `data-simply-field` elements and make them editable. This uses `contentEditable`, but only partly.
+1. SimplyEdit calls `connect()` on the JSON data store. If necessary this will open a login dialog. When connect() returns true, continue.
+2. Locate all `data-simply-field` elements and make them editable. 
 2. Locate all `data-simply-sortable` elements and make their contents sortable.
 3. Show the main toolbar
 
